@@ -1,0 +1,7 @@
+sudo: required
+service: 
+  - docker
+before_install:
+  - docker build -t arafath1019/Docker-react -f Dockerfile.dev .
+script:
+  - docker run arafath1019/Docker-react npm run test -- --coverage
